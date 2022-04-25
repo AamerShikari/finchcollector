@@ -1,10 +1,9 @@
 from django.db import models
 
 # Create your models here.
-class Finch: 
-    def __init__(self, name, breed, description, age):
-        self.name = name
-        self.breed = breed
-        self.description = description
-        self.age = age
-    
+
+class Finch(models.Model):
+    name = models.CharField(max_length=100)
+    breed = models.CharField(max_length=100)
+    description = models.CharField(max_length=100)
+    age = models.IntegerField()
