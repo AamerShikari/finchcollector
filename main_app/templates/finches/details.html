@@ -1,5 +1,4 @@
-{% extends 'base.html' %}
-{% block content %}
+{% extends 'base.html' %} {% block content %}
 
 <h1>Finch Details</h1>
 
@@ -9,12 +8,15 @@
     <p>Breed: {{ finch.breed }}</p>
     <p>Description: {{ finch.description }}</p>
     {% if finch.age > 0 %}
-      <p>Age: {{ finch.age }}</p>
+    <p>Age: {{ finch.age }}</p>
     {% else %}
-      <p>Age: Hatchling</p>
+    <p>Age: Hatchling</p>
     {% endif %}
   </div>
+  <div class="card-action">
+    <button><a href="{% url 'finch_update' finch.id %}">Edit</a></button>
+    <button><a href="{% url 'finch_delete' finch.id %}">Delete</a></button>
+  </div>
 </div>
-
 
 {% endblock %}

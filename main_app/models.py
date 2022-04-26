@@ -11,4 +11,4 @@ class Finch(models.Model):
 
 
     def get_absolute_url(self):
-        return reverse('details', kwargs={'finch_id': self.id})
+        return reverse('detail', kwargs={'finch_id': self.id})
