@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpRequest, HttpResponse
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
-from .models import Finch
+from .models import Finch, Feeding
 # Create your views here.
 def home(request):
     return render(request, 'index.html')
