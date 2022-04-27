@@ -17,7 +17,7 @@ class Toy(models.Model):
         return self.name
 
     def get_absolute_url(self):
-        return reverse('detail', kwargs={'toy_id': self.id})
+        return reverse('toy_details', kwargs={'pk': self.id})
 
 
 class Finch(models.Model):

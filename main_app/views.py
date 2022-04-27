@@ -49,3 +49,16 @@ def toys(request):
 
 class ToyDetails(DetailView):
     model = Toy
+
+class ToyCreate(CreateView):
+    model = Toy
+    fields = '__all__'
+    success_url = '/toys'
+
+class ToyUpdate(UpdateView):
+    model = Toy
+    fields = ['material', 'color']
+
+class ToyDelete(DeleteView):
+    model = Toy
+    success_url = '/toys'

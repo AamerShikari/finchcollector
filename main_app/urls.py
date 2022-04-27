@@ -12,4 +12,7 @@ urlpatterns = [
     path('finches/<int:finch_id>/add_feeding', views.add_feeding, name='add_feeding'),
     path('toys/', views.toys, name='view_toys'),
     path('toys/<int:pk>', views.ToyDetails.as_view(), name='toy_details'),
+    path('toys/create/', views.ToyCreate.as_view(), name='add_toy'),
+    path('toys/<int:pk>/update', views.ToyUpdate.as_view(), name='toy_update'),
+    path('toys/<int:pk>/delete', views.ToyDelete.as_view(), name='toy_delete'),
 ]
