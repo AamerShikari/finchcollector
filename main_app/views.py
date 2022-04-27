@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpRequest, HttpResponse
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
-from .models import Finch, Feeding
+from .models import Finch, Feeding, Toy
 from .forms import FeedingForm
 # Create your views here.
 def home(request):
@@ -42,5 +42,6 @@ def add_feeding(request, finch_id):
         new_feeding.save()
     return redirect('detail', finch_id=finch_id)
 
-    class Meta: 
-        ordering = ['-date']
+def toys(request):
+    toys = Toy.objects.all()
+    return render(request, 'toys/index.html', {'toys': toys})
