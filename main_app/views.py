@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpRequest, HttpResponse
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.views.generic import DetailView
 from .models import Finch, Feeding, Toy
 from .forms import FeedingForm
 # Create your views here.
@@ -45,3 +46,6 @@ def add_feeding(request, finch_id):
 def toys(request):
     toys = Toy.objects.all()
     return render(request, 'toys/index.html', {'toys': toys})
+
+class ToyDetails(DetailView):
+    model = Toy
